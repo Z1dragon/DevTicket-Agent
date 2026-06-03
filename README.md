@@ -89,9 +89,7 @@ docs/
   resume_project.md
 ```
 
-## 当前运行深度
 
-`interview-only`：目标是能讲清楚 Agentic RAG 的核心链路、关键取舍、评测方法和后续扩展，而不是追求生产级完整部署。
 
 ## Baseline Run
 
