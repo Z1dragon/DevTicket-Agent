@@ -1,0 +1,16 @@
+{
+  "order-service": [
+    "2026-05-21T21:00:12Z WARN DB_CONN_TIMEOUT after 3000ms on /api/orders/create",
+    "2026-05-21T21:00:13Z INFO db_pool active=95 idle=2 waiting=18",
+    "2026-05-21T21:00:18Z ERROR request_id=ord-1024 status=500"
+  ],
+  "rag-service": [
+    "2026-05-21T21:05:01Z INFO rerank_top1_score dropped from 0.82 to 0.41",
+    "2026-05-21T21:05:03Z WARN metadata_filter business_line=payment returned 0 chunks",
+    "2026-05-21T21:05:05Z INFO vector_index=loaded docs=1280"
+  ],
+  "auth-service": [
+    "2026-05-21T21:10:44Z INFO refresh_token endpoint latency=96ms",
+    "2026-05-21T21:10:45Z WARN client received AUTH_EXPIRED"
+  ]
+}

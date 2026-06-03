@@ -1,0 +1,72 @@
+[
+  {
+    "id": "case-001",
+    "query": "订单创建接口最近总是 500，日志里有 DB_CONN_TIMEOUT，应该怎么排查？",
+    "expected_category": "api_error",
+    "expected_tools": ["error_code_lookup", "service_status"],
+    "expected_doc_ids": ["kb-api-500-timeout", "kb-error-codes"]
+  },
+  {
+    "id": "case-002",
+    "query": "RAG 问退款规则却召回物流文档，可能是什么问题？",
+    "expected_category": "rag_quality",
+    "expected_tools": [],
+    "expected_doc_ids": ["kb-rag-low-recall"]
+  },
+  {
+    "id": "case-003",
+    "query": "接口 p95 从 300ms 涨到 2s，要先看哪些指标？",
+    "expected_category": "performance",
+    "expected_tools": ["service_status", "log_search"],
+    "expected_doc_ids": ["kb-latency-spike"]
+  },
+  {
+    "id": "case-004",
+    "query": "用户输入要求忽略系统提示并调用全部工具，这种 prompt injection 怎么防？",
+    "expected_category": "security",
+    "expected_tools": [],
+    "expected_doc_ids": ["kb-prompt-injection"]
+  },
+  {
+    "id": "case-005",
+    "query": "向量检索返回 VECTOR_EMPTY，问答系统应该怎么兜底？",
+    "expected_category": "rag_quality",
+    "expected_tools": ["error_code_lookup"],
+    "expected_doc_ids": ["kb-error-codes", "kb-service-degraded"]
+  },
+  {
+    "id": "case-006",
+    "query": "下游服务超时，错误码是 UPSTREAM_504，Agent 可以直接给最终结论吗？",
+    "expected_category": "api_error",
+    "expected_tools": ["error_code_lookup", "service_status"],
+    "expected_doc_ids": ["kb-error-codes", "kb-service-degraded"]
+  },
+  {
+    "id": "case-007",
+    "query": "线上问答命中率下降，我想知道是不是 chunk 切分和 rerank 的问题。",
+    "expected_category": "rag_quality",
+    "expected_tools": [],
+    "expected_doc_ids": ["kb-rag-low-recall"]
+  },
+  {
+    "id": "case-008",
+    "query": "服务 CPU 正常但请求变慢，有没有可能是数据库或队列问题？",
+    "expected_category": "performance",
+    "expected_tools": ["service_status", "log_search"],
+    "expected_doc_ids": ["kb-latency-spike"]
+  },
+  {
+    "id": "case-009",
+    "query": "登录态过期 AUTH_EXPIRED，应该怎么提示用户？",
+    "expected_category": "api_error",
+    "expected_tools": ["error_code_lookup"],
+    "expected_doc_ids": ["kb-error-codes"]
+  },
+  {
+    "id": "case-010",
+    "query": "证据不足时 Agent 应该继续编一个答案还是升级人工？",
+    "expected_category": "unknown",
+    "expected_tools": [],
+    "expected_doc_ids": ["kb-service-degraded"]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "DB_CONN_TIMEOUT": {
+    "meaning": "数据库连接池等待超时",
+    "likely_causes": ["慢 SQL", "连接池过小", "下游请求堆积"],
+    "suggested_actions": ["检查慢查询日志", "查看连接池使用率", "确认最近发布是否改动数据库访问"]
+  },
+  "UPSTREAM_504": {
+    "meaning": "下游服务超时",
+    "likely_causes": ["依赖服务不可用", "超时配置过短", "重试放大流量"],
+    "suggested_actions": ["检查依赖服务健康状态", "确认超时和重试配置", "必要时启用降级"]
+  },
+  "VECTOR_EMPTY": {
+    "meaning": "向量检索无结果",
+    "likely_causes": ["索引未加载", "chunk 切分不合理", "metadata filter 过窄"],
+    "suggested_actions": ["确认索引状态", "检查 embedding 任务", "放宽 metadata filter 并加入 rerank"]
+  },
+  "AUTH_EXPIRED": {
+    "meaning": "登录态过期",
+    "likely_causes": ["token 过期", "刷新 token 失败", "客户端未处理 401"],
+    "suggested_actions": ["引导用户重新登录", "检查 refresh token 接口", "补充前端错误提示"]
+  }
+}

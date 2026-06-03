@@ -1,0 +1,22 @@
+{
+  "order-service": {
+    "status": "warning",
+    "p95_latency_ms": 1800,
+    "error_rate": 0.042,
+    "db_pool_usage": 0.95,
+    "last_deploy": "2026-05-21 20:30"
+  },
+  "rag-service": {
+    "status": "healthy",
+    "qps": 12,
+    "vector_index": "loaded",
+    "rerank_enabled": true,
+    "last_deploy": "2026-05-21 18:10"
+  },
+  "auth-service": {
+    "status": "healthy",
+    "token_refresh": "available",
+    "error_rate": 0.003,
+    "last_deploy": "2026-05-20 16:40"
+  }
+}

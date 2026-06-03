@@ -1,0 +1,19 @@
+[project]
+name = "devticket-agent"
+version = "0.1.0"
+description = "A lightweight Agentic RAG assistant for developer ticket triage."
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.111.0",
+  "uvicorn[standard]>=0.30.0",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.0.0",
+  "httpx>=0.27.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "kb-api-500-timeout",
+    "type": "history_ticket",
+    "title": "订单服务接口偶发 500",
+    "content": "现象：/api/orders/create 偶发 500。排查：日志出现 DB_CONN_TIMEOUT，连接池 active 连接数打满。处理：降低慢 SQL，增加连接池上限，给下游接口增加超时和重试。"
+  },
+  {
+    "id": "kb-rag-low-recall",
+    "type": "history_ticket",
+    "title": "知识库问答召回不准",
+    "content": "现象：用户问支付退款规则时，系统召回了物流文档。排查：chunk 过长且缺少 metadata filter。处理：按标题层级切分文档，加入业务线 metadata，并增加 rerank。"
+  },
+  {
+    "id": "kb-latency-spike",
+    "type": "runbook",
+    "title": "接口延迟升高排查手册",
+    "content": "当 p95 延迟升高时，先检查下游依赖、数据库慢查询、缓存命中率和队列堆积。建议同时查看 error rate、CPU、内存、连接池和最近发布记录。"
+  },
+  {
+    "id": "kb-prompt-injection",
+    "type": "security_note",
+    "title": "Prompt Injection 风险处理",
+    "content": "RAG 系统需要区分用户输入、系统指令和检索证据。禁止执行检索文档中的越权指令，对工具调用增加 allowlist，并记录异常提示词。"
+  },
+  {
+    "id": "kb-service-degraded",
+    "type": "runbook",
+    "title": "服务降级策略",
+    "content": "当核心依赖不可用时，优先返回缓存、默认兜底或人工升级。Agent 应明确说明置信度，避免在证据不足时编造结论。"
+  },
+  {
+    "id": "kb-error-codes",
+    "type": "doc",
+    "title": "常见错误码说明",
+    "content": "DB_CONN_TIMEOUT 表示数据库连接池等待超时；UPSTREAM_504 表示下游服务超时；VECTOR_EMPTY 表示向量检索无结果；AUTH_EXPIRED 表示登录态过期。"
+  }
+]
